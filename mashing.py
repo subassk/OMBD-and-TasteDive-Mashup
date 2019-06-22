@@ -22,3 +22,19 @@ print(list)
 extract_movie_titles(get_movies_from_tastedive("Tony Bennett"))
 extract_movie_titles(get_movies_from_tastedive("Black Panther"))
 
+def get_related_titles(list):
+    final_list = []
+    for title in list:
+        for item in extract_movie_titles(get_movies_from_tastedive(title)):
+            final_list.append(item)
+    print(final_list)               
+    
+    return_list = []
+    for item in final_list:
+        if item not in return_list:
+            return_list.append(item)
+    return return_list
+    
+
+get_related_titles(["Black Panther", "Captain Marvel"])
+get_related_titles([])
