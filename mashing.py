@@ -35,6 +35,5 @@ def get_related_titles(list):
             return_list.append(item)
     return return_list
     
-
 get_related_titles(["Black Panther", "Captain Marvel"])
 get_related_titles([])
